@@ -34,6 +34,14 @@ This online art directory is a space where artistic creators from around the wor
 
 ---
 
+## **_Planning_**
+
+![Component Hierarchy Diagram](/images/Component%20Hierarchy%20Diagram.drawio.png)
+
+![ERD](/images/ERD.drawio.png)
+
+---
+
 ## **_Future Updates_**
 
 - [ ] Allow users to create personal accounts for cloud storage
