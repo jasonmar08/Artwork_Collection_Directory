@@ -6,7 +6,7 @@
 
 ### By: Jason Martinez
 
-### [GitHub](https://github.com/jasonmar08) | [LinkedIn](https://linkedin.com/in/jason-martinez-a79ba7aa)
+### [GitHub](https://github.com/jasonmar08) | [LinkedIn](https://linkedin.com/in/martinez-jason)
 
 ---
 
