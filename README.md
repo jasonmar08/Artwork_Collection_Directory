@@ -51,3 +51,5 @@ This online art directory is a space where artistic creators from around the wor
 ---
 
 ## **_Credits_**
+
+**Technologies: [synergytop.com](https://tinyurl.com/5n7b5mzm)**
