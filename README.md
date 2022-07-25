@@ -14,6 +14,8 @@
 
 An online art district where artists can come together and share their unique creations from all around the globe.
 
+Start sharing your art [now](# deployed site)!
+
 ---
 
 ## **_Technologies Used_**
