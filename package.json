@@ -10,7 +10,8 @@
     "nodemon": "^2.0.19"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "name": "project2",
   "description": "<!-- ![Artwork Collection Directory]() -->",
