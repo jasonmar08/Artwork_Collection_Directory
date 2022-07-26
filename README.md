@@ -38,9 +38,9 @@ This online art directory is a space where artistic creators from around the wor
 
 ## **_Planning_**
 
-![Component Hierarchy Diagram](/images/Component%20Hierarchy%20Diagram.drawio.png)
+![Component Hierarchy Diagram](/client/images/Component%20Hierarchy%20Diagram.drawio.png)
 
-![ERD](/images/ERD.drawio.png)
+![ERD](/client/images/ERD.drawio.png)
 
 ---
 
