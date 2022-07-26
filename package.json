@@ -2,10 +2,29 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "mongoose": "^6.4.7",
     "morgan": "^1.10.0",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "project2",
+  "description": "<!-- ![Artwork Collection Directory]() -->",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonmar08/Artwork_Collection_Directory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonmar08/Artwork_Collection_Directory/issues"
+  },
+  "homepage": "https://github.com/jasonmar08/Artwork_Collection_Directory#readme"
 }
