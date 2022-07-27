@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import CollectionList from '../components/CollectionList'
-import Header from '../components/Header'
 
 const Home = () => {
   const [collections, setCollections] = useState([])
 
   useEffect(() => {
     const getCollections = async () => {
-      // const res = await axios.get(``)
-      // setCollections(res.data.collections)
+      const res = await axios.get(`http://localhost:3001/collections`)
+      console.log(res)
+      setCollections(res.data.collections)
     }
 
     getCollections()
@@ -18,7 +18,18 @@ const Home = () => {
   return (
     <div>
       <h1>Your Art Gallery</h1>
-      <div className="home-art"></div>
+      <div className="home-collections">
+        {collections?.map((collection, index) => (
+          <div key={index}>
+            // DOES THIS NEED TO BE THE SAME AS THE SECOND PARAMETER?
+            <CollectionList
+              collection_image={collections.collection_image}
+              collection_name={collections.collection_name}
+              collection_size={collections.collection_size}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
