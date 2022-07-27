@@ -23,9 +23,9 @@ const Home = () => {
           <div key={index}>
             // DOES THIS NEED TO BE THE SAME AS THE SECOND PARAMETER?
             <CollectionList
-              collection_image={collections.collection_image}
-              collection_name={collections.collection_name}
-              collection_size={collections.collection_size}
+              collection_image={collection.collection_image}
+              collection_name={collection.collection_name}
+              collection_size={collection.collection_size}
             />
           </div>
         ))}

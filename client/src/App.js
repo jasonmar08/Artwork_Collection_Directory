@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
-import CollectionPage from './pages/CollectionPage'
-import CollectionList from './components/CollectionList'
+import ArtworkList from './pages/ArtworkList'
 import { useState } from 'react'
 
 const App = () => {
