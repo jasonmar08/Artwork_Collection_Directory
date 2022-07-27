@@ -28,7 +28,10 @@ const App = () => {
             path="/"
             element={<Home handleCollectionSelect={handleCollectionSelect} />}
           />
-          <Route path="/collection/:collectionId" element={collectionSelect} />
+          <Route
+            path="/collection/:collectionId"
+            element={<ArtworkList collectionSelect={collectionSelect} />}
+          />
         </Routes>
       </main>
     </div>

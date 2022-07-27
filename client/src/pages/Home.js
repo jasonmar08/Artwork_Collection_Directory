@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import CollectionList from '../components/CollectionList'
 
-const Home = () => {
+const Home = ({ handleCollectionSelect }) => {
   const [collections, setCollections] = useState([])
 
   useEffect(() => {
@@ -26,6 +26,7 @@ const Home = () => {
               collection_image={collection.collection_image}
               collection_name={collection.collection_name}
               collection_size={collection.collection_size}
+              onClick={() => handleCollectionSelect(collection)}
             />
           </div>
         ))}
