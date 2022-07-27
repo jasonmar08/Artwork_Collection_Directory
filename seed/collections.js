@@ -8,22 +8,22 @@ const main = async () => {
   const collections = [
     {
       collection_name: 'Eyes on Walls',
-      collection_image: '../db/images/cllctn_eyes_on_walls.jpeg',
+      collection_image: 'https://tinyurl.com/yc7vrxyf',
       collection_size: `${Artwork.length}`
     },
     {
       collection_name: 'Bridgeman Art',
-      collection_image: '../db/images/cllctn_bridgeman_art.jpeg',
+      collection_image: 'https://tinyurl.com/2558kn4u',
       collection_size: `${Artwork.length}`
     },
     {
       collection_name: 'Vogue Art',
-      collection_image: '../db/images/cllctn_vogue_art.jpeg',
+      collection_image: 'https://tinyurl.com/5chz9ru3',
       collection_size: `${Artwork.length}`
     },
     {
       collection_name: 'Library of Congress',
-      collection_image: '../db/images/cllctn_library_of_congress.jpeg',
+      collection_image: 'https://tinyurl.com/47wf75kz',
       collection_size: `${Artwork.length}`
     },
     {
