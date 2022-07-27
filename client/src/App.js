@@ -8,27 +8,28 @@ import CollectionList from './components/CollectionList'
 import { useState } from 'react'
 
 const App = () => {
-  ////////
   ///// STATE /////
   const [collectionSelect, setCollectionSelect] = useState('')
 
   let navigate = useNavigate()
 
-  ////////
   ///// FUNCTIONS /////
   const handleCollectionSelect = (collection) => {
     setCollectionSelect(collection)
-    // navigate()
+    navigate(`/collection/${collection._id}`)
   }
 
-  ////////
   ///// DISPLAY RETURNS /////
   return (
     <div className="App">
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home handleCollectionSelect={handleCollectionSelect} />}
+          />
+          <Route path="/collection/:collectionId" element={collectionSelect} />
         </Routes>
       </main>
     </div>
