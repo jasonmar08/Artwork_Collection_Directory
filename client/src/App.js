@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
 import ArtworkList from './pages/ArtworkList'
+import ShareArt from './pages/ShareArt'
 import { useState } from 'react'
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
             path="/collection/:collectionId"
             element={<ArtworkList collectionSelect={collectionSelect} />}
           />
+          <Route path="/share" element={<ShareArt />} />
         </Routes>
       </main>
     </div>

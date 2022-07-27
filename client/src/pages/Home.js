@@ -11,17 +11,16 @@ const Home = ({ handleCollectionSelect }) => {
       console.log(res)
       setCollections(res.data.collections)
     }
-
     getCollections()
   }, [])
 
   return (
     <div>
       <h1>Your Art Gallery</h1>
+      <h2>Collections:</h2>
       <div className="home-collections">
         {collections?.map((collection, index) => (
           <div key={index}>
-            // DOES THIS NEED TO BE THE SAME AS THE SECOND PARAMETER?
             <CollectionList
               collection_image={collection.collection_image}
               collection_name={collection.collection_name}
