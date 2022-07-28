@@ -12,6 +12,7 @@ const ArtworkList = (props) => {
       const res = await axios.get(
         `http://localhost:3001/artworks/${collectionId}`
       )
+      console.log(res)
       setArtworks(res.data.artworks)
     }
     getArtworks()
@@ -19,7 +20,9 @@ const ArtworkList = (props) => {
 
   return (
     <div>
-      <h1>The (Collection Name Here) Collection</h1>
+      <h1>
+        The "<em>Collection Name Here</em>" Collection
+      </h1>
       <div className="artworks-grid">
         {artworks?.map((artwork, index) => (
           <div className="artworkCard" key={index}>

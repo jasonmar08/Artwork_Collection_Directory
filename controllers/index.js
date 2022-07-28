@@ -41,7 +41,7 @@ const getAllArtworksByCollection = async (req, res) => {
   }
 }
 
-const postNewArtwork = async (req, res) => {
+const postNewArtworkByCollection = async (req, res) => {
   try {
     const artwork = await new Artwork(req.body)
     await artwork.save()
@@ -66,6 +66,6 @@ module.exports = {
   getSelectedCollection,
   getAllArtworks,
   getAllArtworksByCollection,
-  postNewArtwork,
+  postNewArtworkByCollection,
   postNewCollection
 }

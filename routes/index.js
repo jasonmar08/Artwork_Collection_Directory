@@ -14,6 +14,6 @@ router.get('/artworks/:id', controllers.getAllArtworksByCollection)
 
 router.get('/artworks', controllers.getAllArtworks)
 
-router.post('/artworks', controllers.postNewArtwork)
+router.post('/artworks', controllers.postNewArtworkByCollection)
 
 module.exports = router
