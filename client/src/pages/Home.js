@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import axios from 'axios'
 import CollectionList from '../components/CollectionList'
 
-const Home = ({ handleCollectionSelect }) => {
-  const [collections, setCollections] = useState([])
-
+const Home = ({ handleCollectionSelect, collections, setCollections }) => {
   useEffect(() => {
     const getCollections = async () => {
       const res = await axios.get(`http://localhost:3001/collections`)
-      console.log(res)
+      console.log('Home Mounted')
       setCollections(res.data.collections)
+      console.log(res.data.collections)
     }
     getCollections()
   }, [])
@@ -24,7 +23,7 @@ const Home = ({ handleCollectionSelect }) => {
               collection_image={collection.collection_image}
               collection_name={collection.collection_name}
               collection_size={collection.collection_size}
-              onClick={() => handleCollectionSelect(collection)}
+              onClick={() => handleCollectionSelect(collection, index)}
             />
           </div>
         ))}

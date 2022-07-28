@@ -51,11 +51,23 @@ const postNewArtworkByCollection = async (req, res) => {
   }
 }
 
+const findCollectionByIdAndDelete = async (req, res) => {
+  try {
+    let deleted = await Collection.findByIdAndDelete(req.params.id)
+    if (deleted) {
+      return res.status(200).send('Collection Deleted!')
+    }
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const postNewCollection = async (req, res) => {
   try {
-    const collection = await new Collection(req.body)
-    await collection.save()
-    return res.status(200).json({ collection })
+    const collection = await Collection.create(req.body)
+    return res
+      .status(200)
+      .json({ collection }.send('Created New Collection!!!'))
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -67,5 +79,6 @@ module.exports = {
   getAllArtworks,
   getAllArtworksByCollection,
   postNewArtworkByCollection,
+  findCollectionByIdAndDelete,
   postNewCollection
 }

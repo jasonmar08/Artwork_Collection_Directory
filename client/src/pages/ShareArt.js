@@ -1,55 +1,56 @@
+import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const ShareArt = () => {
-  const [collection_name, setCollectionName] = useState('')
-  const [collection_image, setCollectionImage] = useState('')
+const ShareArt = ({ collections, setCollections }) => {
   // const [existingCollection, setExistingCollection] = useState('')
   const [artist_name, setArtistName] = useState('')
   const [piece_name, setArtworkName] = useState('')
   const [price, setArtworkPrice] = useState('')
   const [image, setArtworkImage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  let navigate = useNavigate()
+  const initialState = {
+    collection_name: '',
+    collection_image: ''
+  }
+  const [formState, setFormState] = useState(initialState)
 
-  const handleCollectionSubmit = (e) => {
-    e.preventDefault()
-    const newCollection = { collection_name, collection_image }
-
-    setIsLoading(true)
-
-    fetch('http://localhost:3001/collections', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newCollection)
-    }).then(() => {
-      console.log('New Collection Added!')
-      setIsLoading(false)
-    })
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.id]: e.target.value })
   }
 
-  const useHandleArtworkSubmit = (e) => {
+  const handleSubmitCollection = async (e) => {
     e.preventDefault()
-    const newArtwork = {
-      piece_name,
-      image,
-      artist_name,
-      price,
-      collection_name
-    }
-
-    let { collectionId } = useParams()
-
-    setIsLoading(true)
-
-    fetch(`http://localhost:3001/artworks/${collectionId}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newArtwork)
-    }).then(() => {
-      console.log('New Artwork Added!')
-      setIsLoading(false)
-    })
+    const res = await axios.post('http://localhost:3001/collections', formState)
+    console.log(res)
+    setFormState(initialState)
+    navigate('/')
   }
+
+  // const useHandleArtworkSubmit = (e) => {
+  //   e.preventDefault()
+  //   const newArtwork = {
+  //     piece_name,
+  //     image,
+  //     artist_name,
+  //     price,
+  //     collection_name
+  //   }
+
+  //   let { collectionId } = useParams()
+
+  //   setIsLoading(true)
+
+  //   fetch(`http://localhost:3001/artworks/${collectionId}`, {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(newArtwork)
+  //   }).then(() => {
+  //     console.log('New Artwork Added!')
+  //     setIsLoading(false)
+  //   })
+  // }
 
   return (
     <div>
@@ -57,29 +58,35 @@ const ShareArt = () => {
       <div className="submissionForms">
         <div className="newCollectionForm">
           <h4>Add A New Collection:</h4>
-          <form onSubmit={handleCollectionSubmit} className="collectionInputs">
+          <form onSubmit={handleSubmitCollection} className="collectionInputs">
             <label>New Collection Name:</label>
             <input
               type="text"
               required
-              value={collection_name}
-              onChange={(e) => setCollectionName(e.target.value)}
+              id="collection_name"
+              onChange={handleChange}
+              value={formState.collection_name}
               placeholder="Collection Name"
             ></input>
             <label>Collection Cover Image:</label>
             <input
               type="text"
               required
-              value={collection_image}
-              onChange={(e) => setCollectionImage(e.target.value)}
+              id="collection_image"
+              onChange={handleChange}
+              value={formState.collection_image}
               placeholder="Image URL"
             ></input>
             <section className="subButts">
               {!isLoading && (
-                <button className="submitButtons">Submit Collection!</button>
+                <button type="submit" className="submitButtons">
+                  Submit Collection!
+                </button>
               )}
               {isLoading && (
-                <button className="submitButtons">Adding Collection...</button>
+                <button type="submit" className="submitButtons">
+                  Adding Collection...
+                </button>
               )}
             </section>
           </form>
@@ -88,13 +95,9 @@ const ShareArt = () => {
         </div>
         <div className="newArtworkForm">
           <h4>Add To An Existing Collection:</h4>
-          <form onSubmit={useHandleArtworkSubmit} className="artworkInputs">
+          <form className="artworkInputs">
             <label>Select Collection:</label>
-            <select
-              value={collection_name}
-              onChange={(e) => setCollectionName(e.target.value)}
-              className="chooseCollection"
-            >
+            <select className="chooseCollection">
               <option value="Eyes on Walls">Eyes on Walls</option>
               <option value="Bridgeman Art">Bridgeman Art</option>
               <option value="Vogue Art">Vogue Art</option>

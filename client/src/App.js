@@ -11,13 +11,14 @@ import { Link } from 'react-router-dom'
 const App = () => {
   ///// STATE /////
   const [collectionSelect, setCollectionSelect] = useState('')
+  const [collections, setCollections] = useState([])
 
   let navigate = useNavigate()
 
   ///// FUNCTIONS /////
-  const handleCollectionSelect = (collection) => {
+  const handleCollectionSelect = (collection, index) => {
     setCollectionSelect(collection)
-    navigate(`/collection/${collection._id}`)
+    navigate(`/collection/${collection._id}/${index}`)
   }
 
   ///// DISPLAY RETURNS /////
@@ -31,11 +32,23 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Home handleCollectionSelect={handleCollectionSelect} />}
+            element={
+              <Home
+                handleCollectionSelect={handleCollectionSelect}
+                collections={collections}
+                setCollections={setCollections}
+              />
+            }
           />
           <Route
-            path="/collection/:collectionId"
-            element={<ArtworkList collectionSelect={collectionSelect} />}
+            path="/collection/:collectionId/:index"
+            element={
+              <ArtworkList
+                collectionSelect={collectionSelect}
+                collections={collections}
+                setCollections={setCollections}
+              />
+            }
           />
           <Route path="/share" element={<ShareArt />} />
         </Routes>
