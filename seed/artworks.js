@@ -56,6 +56,22 @@ const createArtwork = async () => {
       collection_name: eyesOnWalls[0]._id
     },
     {
+      piece_name: 'Eagles Become',
+      image:
+        'https://imgc.artprintimages.com/img/print/alex-cherry-eagles-become_u-l-pcbdk70.jpg',
+      artist_name: 'Alex Cherry',
+      price: '$25',
+      collection_name: eyesOnWalls[0]._id
+    },
+    {
+      piece_name: 'Overture',
+      image:
+        'https://imgc.artprintimages.com/img/print/alex-cherry-overture_u-l-q1hm60k0.jpg',
+      artist_name: 'Alex Cherry',
+      price: '$15',
+      collection_name: eyesOnWalls[0]._id
+    },
+    {
       piece_name: 'After the Ball',
       image: 'https://i.postimg.cc/htFbwKTp/after-the-ball.jpg',
       artist_name: 'Ramon Casas i Carbo',

@@ -4,6 +4,12 @@ import { useNavigate } from 'react-router-dom'
 
 const ShareArt = (props) => {
   const [collectionName, setCollectionName] = useState('')
+  const [collectionImage, setCollectionImage] = useState('')
+  const [existingCollection, setExistingCollection] = useState('Eyes on Walls')
+  const [artistName, setArtistName] = useState('')
+  const [artworkName, setArtworkName] = useState('')
+  const [artworkPrice, setArtworkPrice] = useState('')
+  const [artworkImage, setArtworkImage] = useState('')
 
   // const handleSubmit = (e) => {
   //   e.preventDefault()
@@ -19,14 +25,18 @@ const ShareArt = (props) => {
           <form className="collectionInputs">
             <label>New Collection Name:</label>
             <input
-              className="formField"
-              id="collectionName"
+              type="text"
+              required
+              value={collectionName}
+              onChange={(e) => setCollectionName(e.target.value)}
               placeholder="Collection Name"
             ></input>
             <label>Collection Cover Image:</label>
             <input
-              className="formField"
-              id="collectionImage"
+              type="text"
+              required
+              value={collectionImage}
+              onChange={(e) => setCollectionImage(e.target.value)}
               placeholder="Image URL"
             ></input>
           </form>
@@ -35,12 +45,18 @@ const ShareArt = (props) => {
               Submit Collection!
             </button>
           </section>
+          {/* <p>{collectionName}</p>
+          <p>{collectionImage}</p> */}
         </div>
         <div className="newArtworkForm">
           <h4>Add To An Existing Collection:</h4>
           <form className="artworkInputs">
             <label>Select Collection:</label>
-            <select className="chooseCollection">
+            <select
+              value={existingCollection}
+              onChange={(e) => setExistingCollection(e.target.value)}
+              className="chooseCollection"
+            >
               <option value="Eyes on Walls">Eyes on Walls</option>
               <option value="Bridgeman Art">Bridgeman Art</option>
               <option value="Vogue Art">Vogue Art</option>
@@ -50,26 +66,34 @@ const ShareArt = (props) => {
             </select>
             <label>Artist Name:</label>
             <input
-              className="formField"
-              id="artistName"
+              type="text"
+              required
+              value={artistName}
+              onChange={(e) => setArtistName(e.target.value)}
               placeholder="Artist Name"
             ></input>
             <label>Artwork Name:</label>
             <input
-              className="formField"
-              id="pieceName"
+              type="text"
+              required
+              value={artworkName}
+              onChange={(e) => setArtworkName(e.target.value)}
               placeholder="Artwork Name"
             ></input>
             <labe>Artwork Price:</labe>
             <input
-              className="formField"
-              id="price"
+              type="text"
+              required
+              value={artworkPrice}
+              onChange={(e) => setArtworkPrice(e.target.value)}
               placeholder="Artwork Price"
             ></input>
             <label>Artwork Image:</label>
             <input
-              className="formField"
-              id="pieceImage"
+              type="text"
+              required
+              value={artworkImage}
+              onChange={(e) => setArtworkImage(e.target.value)}
               placeholder="Image URL"
             ></input>
           </form>
@@ -78,6 +102,11 @@ const ShareArt = (props) => {
               Submit Artwork!
             </button>
           </section>
+          {/* <p>{existingCollection}</p>
+          <p>{artistName}</p>
+          <p>{artworkName}</p>
+          <p>{artworkPrice}</p>
+          <p>{artworkImage}</p> */}
         </div>
       </div>
     </div>

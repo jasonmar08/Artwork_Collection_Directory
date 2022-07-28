@@ -189,10 +189,11 @@ input {
 .submissionForms {
   display: grid;
   background: linear-gradient(rgb(236, 225, 206), rgb(219, 203, 176)) center/2px 90% no-repeat;
-  padding: 2em 0;
+  padding: 3em 0;
   grid-template-columns: 330px 330px;
   grid-gap: 20em;
   justify-content: center;
+  /* align-items: center; */
 }
 
 .collectionInputs, .artworkInputs {
