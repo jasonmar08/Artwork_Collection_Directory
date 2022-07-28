@@ -10,10 +10,10 @@ router.get('/collection/:id', controllers.getSelectedCollection)
 
 router.post('/collections', controllers.postNewCollection)
 
+router.get('/artworks/:id', controllers.getAllArtworksByCollection)
+
 router.get('/artworks', controllers.getAllArtworks)
 
 router.post('/artworks', controllers.postNewArtwork)
 
 module.exports = router
-
-// would I need an '/artwork/:id' route?

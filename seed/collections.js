@@ -11,7 +11,7 @@ const main = async () => {
     {
       collection_name: 'Eyes on Walls',
       collection_image: 'https://i.postimg.cc/Gtb83rsk/cllctn-eyes-on-walls.jpg'
-      // collection_size: `${Artwork.length}`
+      // collection_size: `${Artwork.get(0).size()}`
     },
     {
       collection_name: 'Bridgeman Art',

@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 4em;
+  height: 3em;
   background-color: #bda57c;
   color: #ffffff;
 }
@@ -35,13 +35,23 @@ a {
     }
     }
 
+.home-collections {
+  padding: 2em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 4em;
+  justify-content: center;
+}
+
 .collection-grid {
   width: 300px;
   padding: 12px;
   margin: 0.5em;
+  /* border: 0.2em double rgb(246, 225, 188); */
 }
   .collection-grid:hover {
     opacity: 0.8;
+    background-color: #d1beaa;
     border: 0.2em outset white;
     border-radius:0.7em;
     cursor: pointer;
@@ -51,6 +61,7 @@ a {
   width: 200px;
   padding: 15px;
   margin: 0.5em;
+  background-color:#dbc9b7;
   border: 0.2em ridge rgb(246, 225, 188);
   border-radius: 0.9em;
 }

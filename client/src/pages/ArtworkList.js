@@ -1,13 +1,17 @@
+import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const ArtworkList = (props) => {
   const [artworks, setArtworks] = useState([])
 
+  let { collectionId } = useParams()
+
   useEffect(() => {
     const getArtworks = async () => {
-      const res = await axios.get(`http://localhost:3001/artworks`)
-      console.log(res)
+      const res = await axios.get(
+        `http://localhost:3001/artworks/${collectionId}`
+      )
       setArtworks(res.data.artworks)
     }
     getArtworks()
@@ -27,7 +31,8 @@ const ArtworkList = (props) => {
             <p>Price: {artwork.price}</p>
           </div>
           <div className="buttons">
-            <button>Remove This Artwork</button>
+            <button>Edit Info</button>
+            <button>Remove Artwork</button>
           </div>
         </div>
       ))}

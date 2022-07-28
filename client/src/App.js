@@ -22,6 +22,7 @@ const App = () => {
   ///// DISPLAY RETURNS /////
   return (
     <div className="App">
+      <h1>Your Art Gallery</h1>
       <Header />
       <main>
         <Routes>

@@ -16,11 +16,10 @@ const Home = ({ handleCollectionSelect }) => {
 
   return (
     <div>
-      <h1>Your Art Gallery</h1>
       <h2>Collections:</h2>
       <div className="home-collections">
         {collections?.map((collection, index) => (
-          <div key={index}>
+          <div key={collection.collection_image}>
             <CollectionList
               collection_image={collection.collection_image}
               collection_name={collection.collection_name}
