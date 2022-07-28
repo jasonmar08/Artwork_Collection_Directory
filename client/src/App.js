@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import ArtworkList from './pages/ArtworkList'
 import ShareArt from './pages/ShareArt'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const App = () => {
   ///// STATE /////
@@ -22,7 +23,9 @@ const App = () => {
   ///// DISPLAY RETURNS /////
   return (
     <div className="App">
-      <h1>Your Art Gallery</h1>
+      <Link to="/" className="logoHeader">
+        <h1>Your Art Gallery</h1>
+      </Link>
       <Header />
       <main>
         <Routes>

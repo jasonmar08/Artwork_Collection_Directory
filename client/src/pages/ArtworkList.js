@@ -20,22 +20,24 @@ const ArtworkList = (props) => {
   return (
     <div>
       <h1>The (Collection Name Here) Collection</h1>
-      {artworks?.map((artwork, index) => (
-        <div className="artworkCard" key={index}>
-          <div className="artwork-img-grid">
-            <img src={artwork.image} alt={artwork.piece_name} />
+      <div className="artworks-grid">
+        {artworks?.map((artwork, index) => (
+          <div className="artworkCard" key={index}>
+            <div className="artwork-img-grid">
+              <img src={artwork.image} alt={artwork.piece_name} />
+            </div>
+            <div className="artwork-name-grid">
+              <h4>{artwork.piece_name}</h4>
+              <p>Artist: {artwork.artist_name}</p>
+              <p>Price: {artwork.price}</p>
+            </div>
+            <div className="buttons">
+              <button>Edit Info</button>
+              <button>Remove Artwork</button>
+            </div>
           </div>
-          <div className="artwork-name-grid">
-            <h4>{artwork.piece_name}</h4>
-            <p>Artist: {artwork.artist_name}</p>
-            <p>Price: {artwork.price}</p>
-          </div>
-          <div className="buttons">
-            <button>Edit Info</button>
-            <button>Remove Artwork</button>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }
