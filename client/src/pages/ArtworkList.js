@@ -28,8 +28,16 @@ const ArtworkList = (props) => {
             </div>
             <div className="artwork-name-grid">
               <h4>{artwork.piece_name}</h4>
-              <p>Artist: {artwork.artist_name}</p>
-              <p>Price: {artwork.price}</p>
+              <p>
+                <span>
+                  <strong>Artist:</strong> {artwork.artist_name}
+                </span>
+              </p>
+              <p>
+                <span>
+                  <strong>Price:</strong> {artwork.price}
+                </span>
+              </p>
             </div>
             <div className="buttons">
               <button>Edit Info</button>

@@ -69,18 +69,32 @@ a {
 
 .artworks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 420px);
+  grid-template-columns: repeat(auto-fill, 370px);
+  row-gap: 4em;
   justify-content: center;
-  margin: 0 0 0 150px;
+  justify-items: center;
+  margin: 50px 50px;
+  text-align: center;
 }
 
 .artworkCard {
-  width: 200px;
+  display: grid;
+  align-content: space-between;
+  width: 250px;
   padding: 15px;
-  margin: 0.5em;
   background-color:#dbc9b7;
   border: 0.2em ridge rgb(246, 225, 188);
   border-radius: 0.9em;
+}
+
+.artwork-img-grid {
+  display: flex;
+  justify-content: center;
+  height: 280px;
+}
+
+span {
+  font-size: 14px;
 }
 
 img {
