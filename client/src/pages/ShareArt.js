@@ -1,20 +1,55 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-const ShareArt = (props) => {
-  const [collectionName, setCollectionName] = useState('')
-  const [collectionImage, setCollectionImage] = useState('')
-  const [existingCollection, setExistingCollection] = useState('Eyes on Walls')
-  const [artistName, setArtistName] = useState('')
-  const [artworkName, setArtworkName] = useState('')
-  const [artworkPrice, setArtworkPrice] = useState('')
-  const [artworkImage, setArtworkImage] = useState('')
+const ShareArt = () => {
+  const [collection_name, setCollectionName] = useState('')
+  const [collection_image, setCollectionImage] = useState('')
+  // const [existingCollection, setExistingCollection] = useState('')
+  const [artist_name, setArtistName] = useState('')
+  const [piece_name, setArtworkName] = useState('')
+  const [price, setArtworkPrice] = useState('')
+  const [image, setArtworkImage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   const
-  // }
+  const handleCollectionSubmit = (e) => {
+    e.preventDefault()
+    const newCollection = { collection_name, collection_image }
+
+    setIsLoading(true)
+
+    fetch('http://localhost:3001/collections', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newCollection)
+    }).then(() => {
+      console.log('New Collection Added!')
+      setIsLoading(false)
+    })
+  }
+
+  const useHandleArtworkSubmit = (e) => {
+    e.preventDefault()
+    const newArtwork = {
+      piece_name,
+      image,
+      artist_name,
+      price,
+      collection_name
+    }
+
+    let { collectionId } = useParams()
+
+    setIsLoading(true)
+
+    fetch(`http://localhost:3001/artworks/${collectionId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newArtwork)
+    }).then(() => {
+      console.log('New Artwork Added!')
+      setIsLoading(false)
+    })
+  }
 
   return (
     <div>
@@ -22,12 +57,12 @@ const ShareArt = (props) => {
       <div className="submissionForms">
         <div className="newCollectionForm">
           <h4>Add A New Collection:</h4>
-          <form className="collectionInputs">
+          <form onSubmit={handleCollectionSubmit} className="collectionInputs">
             <label>New Collection Name:</label>
             <input
               type="text"
               required
-              value={collectionName}
+              value={collection_name}
               onChange={(e) => setCollectionName(e.target.value)}
               placeholder="Collection Name"
             ></input>
@@ -35,26 +70,29 @@ const ShareArt = (props) => {
             <input
               type="text"
               required
-              value={collectionImage}
+              value={collection_image}
               onChange={(e) => setCollectionImage(e.target.value)}
               placeholder="Image URL"
             ></input>
+            <section className="subButts">
+              {!isLoading && (
+                <button className="submitButtons">Submit Collection!</button>
+              )}
+              {isLoading && (
+                <button className="submitButtons">Adding Collection...</button>
+              )}
+            </section>
           </form>
-          <section className="subButts">
-            <button type="submit" className="submitButtons">
-              Submit Collection!
-            </button>
-          </section>
           {/* <p>{collectionName}</p>
           <p>{collectionImage}</p> */}
         </div>
         <div className="newArtworkForm">
           <h4>Add To An Existing Collection:</h4>
-          <form className="artworkInputs">
+          <form onSubmit={useHandleArtworkSubmit} className="artworkInputs">
             <label>Select Collection:</label>
             <select
-              value={existingCollection}
-              onChange={(e) => setExistingCollection(e.target.value)}
+              value={collection_name}
+              onChange={(e) => setCollectionName(e.target.value)}
               className="chooseCollection"
             >
               <option value="Eyes on Walls">Eyes on Walls</option>
@@ -68,7 +106,7 @@ const ShareArt = (props) => {
             <input
               type="text"
               required
-              value={artistName}
+              value={artist_name}
               onChange={(e) => setArtistName(e.target.value)}
               placeholder="Artist Name"
             ></input>
@@ -76,15 +114,15 @@ const ShareArt = (props) => {
             <input
               type="text"
               required
-              value={artworkName}
+              value={piece_name}
               onChange={(e) => setArtworkName(e.target.value)}
               placeholder="Artwork Name"
             ></input>
-            <labe>Artwork Price:</labe>
+            <label>Artwork Price:</label>
             <input
               type="text"
               required
-              value={artworkPrice}
+              value={price}
               onChange={(e) => setArtworkPrice(e.target.value)}
               placeholder="Artwork Price"
             ></input>
@@ -92,16 +130,19 @@ const ShareArt = (props) => {
             <input
               type="text"
               required
-              value={artworkImage}
+              value={image}
               onChange={(e) => setArtworkImage(e.target.value)}
               placeholder="Image URL"
             ></input>
+            <section className="subButts">
+              {!isLoading && (
+                <button className="submitButtons">Submit Artwork!</button>
+              )}
+              {isLoading && (
+                <button className="submitButtons">Adding Artwork...</button>
+              )}
+            </section>
           </form>
-          <section className="subButts">
-            <button type="submit" className="submitButtons">
-              Submit Artwork!
-            </button>
-          </section>
           {/* <p>{existingCollection}</p>
           <p>{artistName}</p>
           <p>{artworkName}</p>

@@ -1,10 +1,10 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const ArtworkList = (props) => {
   const [artworks, setArtworks] = useState([])
-
+  let navigate = useNavigate()
   let { collectionId } = useParams()
 
   useEffect(() => {
@@ -18,11 +18,21 @@ const ArtworkList = (props) => {
     getArtworks()
   }, [])
 
+  const handleClickDeleteCollection = () => {
+    fetch(`http://localhost:3001/artworks/${collectionId}`, {
+      method: 'DELETE'
+    }).then(() => {
+      console.log('A Collection Was Deleted!')
+      navigate('/')
+    })
+  }
+
   return (
     <div>
       <h1>
-        The "<em>Collection Name Here</em>" Collection
+        The "<em>{`${collectionId}`}</em>" Collection
       </h1>
+      <button onClick={handleClickDeleteCollection}>Remove Collection</button>
       <div className="artworks-grid">
         {artworks?.map((artwork, index) => (
           <div className="artworkCard" key={index}>
