@@ -28,6 +28,16 @@ const ShareArt = ({ collections, setCollections }) => {
     navigate('/')
   }
 
+  // const initialStateArtwork = {
+  //   piece_name: '',
+  //   image: '',
+  //   artist_name: '',
+  //   price: '',
+  //   collection_name: '',
+  // }
+
+  // const [formStateArtwork, setFormStateArtwork]
+
   // const useHandleArtworkSubmit = (e) => {
   //   e.preventDefault()
   //   const newArtwork = {

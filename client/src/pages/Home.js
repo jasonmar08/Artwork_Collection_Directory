@@ -5,8 +5,7 @@ import CollectionList from '../components/CollectionList'
 const Home = ({ handleCollectionSelect, collections, setCollections }) => {
   useEffect(() => {
     const getCollections = async () => {
-      const res = await axios.get(`http://localhost:3001/collections`)
-      console.log('Home Mounted')
+      const res = await axios.get(`/collections`)
       setCollections(res.data.collections)
       console.log(res.data.collections)
     }
