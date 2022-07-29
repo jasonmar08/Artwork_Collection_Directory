@@ -31,7 +31,6 @@ const createArtwork = async () => {
       artist_name: 'Alex Cherry',
       price: '$15',
       collection_name: eyesOnWalls[0]._id
-      // review: [{ rating: '', artId: '' }]
     },
     {
       piece_name: 'In Trouble, She Will',

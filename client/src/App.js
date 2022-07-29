@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { useNavigate, useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
@@ -25,7 +25,6 @@ const App = () => {
   }
 
   const handleArtworkUpdateSelect = (collectionId, artwork) => {
-    console.log(collectionId, artwork)
     setArtworkUpdateSelect(artwork)
     navigate(`/collection/artworkUpdate/${collectionId}/${artwork._id}`)
   }

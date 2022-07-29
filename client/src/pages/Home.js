@@ -7,7 +7,6 @@ const Home = ({ handleCollectionSelect, collections, setCollections }) => {
     const getCollections = async () => {
       const res = await axios.get(`/collections`)
       setCollections(res.data.collections)
-      console.log(res.data.collections)
     }
     getCollections()
   }, [])
@@ -21,7 +20,6 @@ const Home = ({ handleCollectionSelect, collections, setCollections }) => {
             <CollectionList
               collection_image={collection.collection_image}
               collection_name={collection.collection_name}
-              collectionId={collection._id}
               onClick={() => handleCollectionSelect(collection, index)}
             />
           </div>

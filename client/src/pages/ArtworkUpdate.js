@@ -3,9 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const UpdateArtwork = () => {
-  // const [isLoading, setIsLoading] = useState(false)
   let navigate = useNavigate()
-
   const initialState = {
     artist_name: '',
     piece_name: '',
@@ -13,12 +11,10 @@ const UpdateArtwork = () => {
     image: ''
   }
   const [formState, setFormState] = useState(initialState)
-
   let { collectionId, artworkId } = useParams()
 
   const getArtwork = async () => {
-    const res = await axios.get(`http://localhost:3001/artwork/${artworkId}`)
-    console.log(res.data.artwork)
+    const res = await axios.get(`/artwork/${artworkId}`)
     setFormState(res.data.artwork[0])
   }
 

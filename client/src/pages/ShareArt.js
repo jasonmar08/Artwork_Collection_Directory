@@ -1,14 +1,8 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const ShareArt = ({ collections, setCollections }) => {
-  // const [existingCollection, setExistingCollection] = useState('')
-  const [artist_name, setArtistName] = useState('')
-  const [piece_name, setArtworkName] = useState('')
-  const [price, setArtworkPrice] = useState('')
-  const [image, setArtworkImage] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+const ShareArt = () => {
   let navigate = useNavigate()
   const initialState = {
     collection_name: '',
@@ -22,45 +16,11 @@ const ShareArt = ({ collections, setCollections }) => {
 
   const handleSubmitCollection = async (e) => {
     e.preventDefault()
-    const res = await axios.post('http://localhost:3001/collections', formState)
+    const res = await axios.post('/collections', formState)
     console.log(res)
     setFormState(initialState)
     navigate('/')
   }
-
-  // const initialStateArtwork = {
-  //   piece_name: '',
-  //   image: '',
-  //   artist_name: '',
-  //   price: '',
-  //   collection_name: '',
-  // }
-
-  // const [formStateArtwork, setFormStateArtwork]
-
-  // const useHandleArtworkSubmit = (e) => {
-  //   e.preventDefault()
-  //   const newArtwork = {
-  //     piece_name,
-  //     image,
-  //     artist_name,
-  //     price,
-  //     collection_name
-  //   }
-
-  //   let { collectionId } = useParams()
-
-  //   setIsLoading(true)
-
-  //   fetch(`http://localhost:3001/artworks/${collectionId}`, {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify(newArtwork)
-  //   }).then(() => {
-  //     console.log('New Artwork Added!')
-  //     setIsLoading(false)
-  //   })
-  // }
 
   return (
     <div>
@@ -88,16 +48,9 @@ const ShareArt = ({ collections, setCollections }) => {
               placeholder="Image URL"
             ></input>
             <section className="subButts">
-              {!isLoading && (
-                <button type="submit" className="submitButtons">
-                  Submit Collection!
-                </button>
-              )}
-              {isLoading && (
-                <button type="submit" className="submitButtons">
-                  Adding Collection...
-                </button>
-              )}
+              <button type="submit" className="submitButtons">
+                Submit Collection!
+              </button>
             </section>
           </form>
         </div>
@@ -114,44 +67,15 @@ const ShareArt = ({ collections, setCollections }) => {
               <option value="Lonely Planet">Lonely Planet</option>
             </select>
             <label>Artist Name:</label>
-            <input
-              type="text"
-              required
-              value={artist_name}
-              onChange={(e) => setArtistName(e.target.value)}
-              placeholder="Artist Name"
-            ></input>
+            <input type="text" required placeholder="Artist Name"></input>
             <label>Artwork Name:</label>
-            <input
-              type="text"
-              required
-              value={piece_name}
-              onChange={(e) => setArtworkName(e.target.value)}
-              placeholder="Artwork Name"
-            ></input>
+            <input type="text" required placeholder="Artwork Name"></input>
             <label>Artwork Price:</label>
-            <input
-              type="text"
-              required
-              value={price}
-              onChange={(e) => setArtworkPrice(e.target.value)}
-              placeholder="Artwork Price"
-            ></input>
+            <input type="text" required placeholder="Artwork Price"></input>
             <label>Artwork Image:</label>
-            <input
-              type="text"
-              required
-              value={image}
-              onChange={(e) => setArtworkImage(e.target.value)}
-              placeholder="Image URL"
-            ></input>
+            <input type="text" required placeholder="Image URL"></input>
             <section className="subButts">
-              {!isLoading && (
-                <button className="submitButtons">Submit Artwork!</button>
-              )}
-              {isLoading && (
-                <button className="submitButtons">Adding Artwork...</button>
-              )}
+              <button className="submitButtons">Submit Artwork!</button>
             </section>
           </form>
         </div>

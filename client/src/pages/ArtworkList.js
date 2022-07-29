@@ -14,17 +14,14 @@ const ArtworkList = ({
 
   useEffect(() => {
     const getArtworks = async () => {
-      const res = await axios.get(
-        `http://localhost:3001/artworks/${collectionId}`
-      )
-      console.log(res)
+      const res = await axios.get(`/artworks/${collectionId}`)
       setArtworks(res.data.artworks)
     }
     getArtworks()
   }, [])
 
   const handleClickDeleteCollection = async () => {
-    await axios.delete(`http://localhost:3001/collection/${collectionId}`)
+    await axios.delete(`/collection/${collectionId}`)
     const updateState = () => {
       let tempArray = collections
       tempArray.splice(index, 1)

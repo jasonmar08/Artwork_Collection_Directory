@@ -9,16 +9,30 @@ header {
 
 header nav a {
   margin: 0 1em;
-  color: #ffffff;
+  color: #e1d9c6;
   text-decoration: none;
 }
 
 .logoHeader {
-  display: block;
   text-decoration: none;
-  color: #5f442f;
-  margin: 0;
+  margin: -20px 580px;
   padding: 0;
+  font-family: 'Times New Roman',serif;
+  letter-spacing: 3px;
+  font-size: 25px;
+  font-weight: bold;
+  background-image: linear-gradient(
+	to right,
+	#462523 0,
+  #cb9b51 22%, 
+	#f6e27a 45%,
+	#f6f2c0 50%,
+	#f6e27a 55%,
+	#cb9b51 78%,
+	#462523 100%
+	);
+  color: transparent;
+  -webkit-background-clip:text;
 }
 
 a {
