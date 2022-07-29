@@ -14,8 +14,10 @@ header nav a {
 }
 
 .logoHeader {
+  display: block;
+  width: 415px;
+  margin: -20px auto;
   text-decoration: none;
-  margin: -20px 580px;
   padding: 0;
   font-family: 'Times New Roman',serif;
   letter-spacing: 3px;
