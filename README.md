@@ -1,6 +1,6 @@
 # Artwork_Collection_Directory
 
-![Artwork Collection Directory](/client/images/HeadeerBanner.png)
+![Artwork Collection Directory](/client/images/Banner.png)
 
 ## Date: 7/25/2022
 
