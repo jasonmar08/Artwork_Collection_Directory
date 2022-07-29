@@ -14,6 +14,10 @@ router.delete('/collection/:id', controllers.findCollectionByIdAndDelete)
 
 router.get('/artworks/:id', controllers.getAllArtworksByCollection)
 
+router.get('/artwork/:id', controllers.getOneArtwork)
+
+router.put('/artwork/:id', controllers.findArtworkByIdAndUpdate)
+
 router.get('/artworks', controllers.getAllArtworks)
 
 router.post('/artworks', controllers.postNewArtworkByCollection)

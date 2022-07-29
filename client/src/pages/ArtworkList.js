@@ -2,7 +2,12 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const ArtworkList = ({ collections, setCollections }) => {
+const ArtworkList = ({
+  collections,
+  collectionSelect,
+  setCollections,
+  handleArtworkUpdateSelect
+}) => {
   const [artworks, setArtworks] = useState([])
   let navigate = useNavigate()
   let { collectionId, index } = useParams()
@@ -32,9 +37,13 @@ const ArtworkList = ({ collections, setCollections }) => {
   return (
     <div>
       <h1>
-        The "<em>{`${collectionId}`}</em>" Collection
+        The "<em>{`${collectionSelect.collection_name}`}</em>" Collection
       </h1>
-      <button onClick={handleClickDeleteCollection}>Remove Collection</button>
+      <div className="removeCollection">
+        <button onClick={handleClickDeleteCollection} className="removeButton">
+          Delete Collection
+        </button>
+      </div>
       <div className="artworks-grid">
         {artworks?.map((artwork, index) => (
           <div className="artworkCard" key={index}>
@@ -55,8 +64,13 @@ const ArtworkList = ({ collections, setCollections }) => {
               </p>
             </div>
             <div className="buttons">
-              <button>Edit Info</button>
-              <button>Remove Artwork</button>
+              <button
+                onClick={() => handleArtworkUpdateSelect(collectionId, artwork)}
+                className="artworkListButtons"
+              >
+                Edit Info
+              </button>
+              <button className="artworkListButtons">Remove Artwork</button>
             </div>
           </div>
         ))}

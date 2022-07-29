@@ -1,0 +1,93 @@
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios'
+
+const UpdateArtwork = () => {
+  // const [isLoading, setIsLoading] = useState(false)
+  let navigate = useNavigate()
+
+  const initialState = {
+    artist_name: '',
+    piece_name: '',
+    price: '',
+    image: ''
+  }
+  const [formState, setFormState] = useState(initialState)
+
+  let { collectionId, artworkId } = useParams()
+
+  const getArtwork = async () => {
+    const res = await axios.get(`http://localhost:3001/artwork/${artworkId}`)
+    console.log(res.data.artwork)
+    setFormState(res.data.artwork[0])
+  }
+
+  const handleChange = (e) => {
+    e.preventDefault()
+    setFormState({ ...formState, [e.target.id]: e.target.value })
+  }
+
+  const updateArtwork = async (e) => {
+    e.preventDefault()
+    const res = await axios.put(
+      `http://localhost:3001/artwork/${artworkId}`,
+      formState
+    )
+    navigate(`/collection/${collectionId}`)
+  }
+
+  useEffect(() => {
+    getArtwork()
+  }, [])
+
+  return (
+    <div>
+      <div className="updateArtworkForm">
+        <h4>Update Your Artwork Below:</h4>
+        <form onSubmit={updateArtwork} className="updateInputs">
+          <label>Artist Name:</label>
+          <input
+            type="text"
+            required
+            id="artist_name"
+            onChange={handleChange}
+            value={formState.artist_name}
+            placeholder="Artist Name"
+          ></input>
+          <label>Artwork Name:</label>
+          <input
+            type="text"
+            required
+            id="piece_name"
+            onChange={handleChange}
+            value={formState.piece_name}
+            placeholder="Artwork Name"
+          ></input>
+          <label>Artwork Price:</label>
+          <input
+            type="text"
+            required
+            id="price"
+            onChange={handleChange}
+            value={formState.price}
+            placeholder="Artwork Price"
+          ></input>
+          <label>Artwork Image:</label>
+          <input
+            type="text"
+            required
+            id="image"
+            onChange={handleChange}
+            value={formState.image}
+            placeholder="Image URL"
+          ></input>
+          <section className="subButts">
+            <button className="submitButtons">Submit Updates!</button>
+          </section>
+        </form>
+      </div>
+    </div>
+  )
+}
+
+export default UpdateArtwork

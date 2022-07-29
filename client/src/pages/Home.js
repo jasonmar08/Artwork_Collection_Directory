@@ -18,7 +18,7 @@ const Home = ({ handleCollectionSelect, collections, setCollections }) => {
       <h2>Collections:</h2>
       <div className="home-collections">
         {collections?.map((collection, index) => (
-          <div key={collection.collection_image}>
+          <div key={collection._id}>
             <CollectionList
               collection_image={collection.collection_image}
               collection_name={collection.collection_name}

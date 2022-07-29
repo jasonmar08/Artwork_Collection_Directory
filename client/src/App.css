@@ -201,3 +201,78 @@ input {
   grid-gap: 8px;
   margin-top: 30px;
 }
+
+.updateArtworkForm {
+  display: grid;
+  padding: 2em 0;
+  grid-template-columns: 330px;
+  /* grid-gap: 1em; */
+  justify-content: center;
+}
+
+.removeCollection {
+  display: flex;
+  justify-content: center;
+}
+
+.removeButton {
+  margin-top: 1em;
+  display: inline-block;
+  background-color:#c4ae88;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin-top: 10px;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight: 300;
+  color:#1b1818;
+  text-align:center;
+  transition: all 0.2s;
+}
+  .removeButton:hover {
+  color:rgb(246, 225, 188);
+  background-color: #c62c2c;
+  cursor: pointer;
+  }
+  @media all and (max-width:30em){
+  .removeButton{
+  display:block;
+  margin:0.4em auto;
+  }
+  }
+
+.artworkListButtons {
+  margin-top: 1em;
+  display: inline-block;
+  background-color:#e8dfcf;
+  padding:0.3em 0.8em;
+  border:0.1em solid #b8a88b;
+  margin-top: 10px;
+  border-radius:0.8em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight: 300;
+  color:#5f442f;
+  text-align:center;
+  transition: all 0.2s;
+}
+  .artworkListButtons:hover {
+  color:white;
+  background-color: #c4ae88;
+  cursor: pointer;
+  }
+  @media all and (max-width:30em){
+  .artworkListButtons{
+  display:block;
+  margin:0.4em auto;
+  }
+  }
+
+.updateInputs {
+  display: grid;
+  grid-gap: 8px;
+  margin-top: 30px;
+}

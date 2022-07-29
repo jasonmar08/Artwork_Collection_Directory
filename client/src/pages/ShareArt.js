@@ -90,8 +90,6 @@ const ShareArt = ({ collections, setCollections }) => {
               )}
             </section>
           </form>
-          {/* <p>{collectionName}</p>
-          <p>{collectionImage}</p> */}
         </div>
         <div className="newArtworkForm">
           <h4>Add To An Existing Collection:</h4>
@@ -146,11 +144,6 @@ const ShareArt = ({ collections, setCollections }) => {
               )}
             </section>
           </form>
-          {/* <p>{existingCollection}</p>
-          <p>{artistName}</p>
-          <p>{artworkName}</p>
-          <p>{artworkPrice}</p>
-          <p>{artworkImage}</p> */}
         </div>
       </div>
     </div>

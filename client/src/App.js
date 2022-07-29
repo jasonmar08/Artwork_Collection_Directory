@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useHistory } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
 import ArtworkList from './pages/ArtworkList'
 import ShareArt from './pages/ShareArt'
+import ArtworkUpdate from './pages/ArtworkUpdate'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -12,13 +13,21 @@ const App = () => {
   ///// STATE /////
   const [collectionSelect, setCollectionSelect] = useState('')
   const [collections, setCollections] = useState([])
+  const [artworkUpdateSelect, setArtworkUpdateSelect] = useState('')
+  const [artwork, setArtwork] = useState([])
 
   let navigate = useNavigate()
 
   ///// FUNCTIONS /////
-  const handleCollectionSelect = (collection, index) => {
+  const handleCollectionSelect = (collection) => {
     setCollectionSelect(collection)
-    navigate(`/collection/${collection._id}/${index}`)
+    navigate(`/collection/${collection._id}`)
+  }
+
+  const handleArtworkUpdateSelect = (collectionId, artwork) => {
+    console.log(collectionId, artwork)
+    setArtworkUpdateSelect(artwork)
+    navigate(`/collection/artworkUpdate/${collectionId}/${artwork._id}`)
   }
 
   ///// DISPLAY RETURNS /////
@@ -41,16 +50,27 @@ const App = () => {
             }
           />
           <Route
-            path="/collection/:collectionId/:index"
+            path="/collection/:collectionId"
             element={
               <ArtworkList
                 collectionSelect={collectionSelect}
                 collections={collections}
                 setCollections={setCollections}
+                handleArtworkUpdateSelect={handleArtworkUpdateSelect}
               />
             }
           />
           <Route path="/share" element={<ShareArt />} />
+          <Route
+            path="/collection/artworkUpdate/:collectionId/:artworkId"
+            element={
+              <ArtworkUpdate
+                artwork={artwork}
+                setArtwork={setArtwork}
+                artworkUpdateSelect={artworkUpdateSelect}
+              />
+            }
+          />
         </Routes>
       </main>
     </div>
