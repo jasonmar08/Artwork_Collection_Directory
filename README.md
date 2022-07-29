@@ -1,8 +1,8 @@
-# Artwork_Collection_Directory
+# Your_Artwork_Gallery
 
-![Artwork Collection Directory](/client/images/Banner.png)
+![Your Artwork Gallery](/client/images/Banner.png)
 
-## Date: 7/25/2022
+## Date: 7/29/2022
 
 ### By: Jason Martinez
 
@@ -18,12 +18,6 @@ Start sharing your art [now](https://nameless-sierra-42667.herokuapp.com/)!
 
 ---
 
-## **_Technologies Used_**
-
-![Technologies Used](https://tinyurl.com/2tns3kp8)
-
----
-
 ## **_Getting Started_**
 
 This online art directory is a space where artistic creators from around the world can come together and display their masterpieces. Artists have the option of promoting an entire collection of artwork, or single pieces.
@@ -32,14 +26,11 @@ This online art directory is a space where artistic creators from around the wor
 
 ## **_Screenshots_**
 
-Collections:
-![Home Page](/client/images/Homepage.png)
-
-Artworks:
+{% slide %}
+![Home/Collections Page](/client/images/Homepage.png)
 ![Artworks Page](/client/images/Artworks.png)
-
-Submit Your Artwork:
-![Submit Page](/client/images/Submit.png)
+![Submit Art Page](/client/images/Submit.png)
+{% endslider %}
 
 ---
 
@@ -48,6 +39,12 @@ Submit Your Artwork:
 ![Component Hierarchy Diagram](/client/images/Component%20Hierarchy%20Diagram.drawio.png)
 
 ![ERD](/client/images/ERD.drawio.png)
+
+---
+
+## **_Technologies Used_**
+
+![Technologies Used](https://tinyurl.com/2tns3kp8)
 
 ---
 
@@ -61,4 +58,7 @@ Submit Your Artwork:
 
 ## **_Credits_**
 
+**Art Gallery Images/Info: [art.com](https://tinyurl.com/ya46mtet)**
 **Technologies: [synergytop.com](https://tinyurl.com/5n7b5mzm)**
+**Planning: [draw.io](https://tinyurl.com/2y959xfw)**
+**CSS Editting: [w3schools.com](https://tinyurl.com/5422vee2) | [stackoverflow.com](https://tinyurl.com/4ddesxs6) | [codingartistweb.com](https://tinyurl.com/2hvcmbfj) | [fdossena.com](https://tinyurl.com/bdedk6ru)**
