@@ -37,14 +37,6 @@ Submitting Your Art:
 
 ---
 
-## **_Planning_**
-
-![Component Hierarchy Diagram](/client/images/Component%20Hierarchy%20Diagram.drawio.png)
-
-![ERD](/client/images/ERD.drawio.png)
-
----
-
 ## **_Technologies Used_**
 
 ![Technologies Used](https://tinyurl.com/2tns3kp8)
@@ -65,6 +57,6 @@ Submitting Your Art:
 
 **Technologies: [synergytop.com](https://tinyurl.com/5n7b5mzm)**
 
-**Planning: [draw.io](https://tinyurl.com/2y959xfw)**
+**Planning: [draw.io](https://tinyurl.com/2y959xfw) | [Trello Board](https://tinyurl.com/y87kvtzc)**
 
 **CSS Editting: [w3schools.com](https://tinyurl.com/5422vee2) | [stackoverflow.com](https://tinyurl.com/4ddesxs6) | [codingartistweb.com](https://tinyurl.com/2hvcmbfj) | [fdossena.com](https://tinyurl.com/bdedk6ru)**
