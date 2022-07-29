@@ -1,6 +1,6 @@
 # Artwork_Collection_Directory
 
-<!-- ![Artwork Collection Directory]() -->
+![Artwork Collection Directory](/client/images/HeadeerBanner.png)
 
 ## Date: 7/25/2022
 
@@ -32,7 +32,14 @@ This online art directory is a space where artistic creators from around the wor
 
 ## **_Screenshots_**
 
-<!-- ![]() -->
+Collections:
+![Home Page](/client/images/Homepage.png)
+
+Artworks:
+![Artworks Page](/client/images/Artworks.png)
+
+Submit Your Artwork:
+![Submit Page](/client/images/Submit.png)
 
 ---
 
