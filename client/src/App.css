@@ -202,6 +202,10 @@ input {
   margin-top: 30px;
 }
 
+.updateTitle {
+  font-size: 20px;
+  text-align: center;
+}
 .updateArtworkForm {
   display: grid;
   padding: 2em 0;

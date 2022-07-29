@@ -8,7 +8,7 @@ const CollectionList = (props) => {
         </div>
         <div className="name-container">
           <h3>{props.collection_name}</h3>
-          <p><strong>Size:</strong> {props.collection_size} pieces</p>
+          <p><strong>Size:</strong> {props.collectionId.length} pieces</p>
         </div>
       </div>
     </div>

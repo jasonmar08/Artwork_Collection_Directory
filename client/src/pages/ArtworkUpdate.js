@@ -43,7 +43,7 @@ const UpdateArtwork = () => {
   return (
     <div>
       <div className="updateArtworkForm">
-        <h4>Update Your Artwork Below:</h4>
+        <h3 className="updateTitle">Update Your Artwork Below:</h3>
         <form onSubmit={updateArtwork} className="updateInputs">
           <label>Artist Name:</label>
           <input

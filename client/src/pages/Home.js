@@ -22,7 +22,7 @@ const Home = ({ handleCollectionSelect, collections, setCollections }) => {
             <CollectionList
               collection_image={collection.collection_image}
               collection_name={collection.collection_name}
-              collection_size={collection.collection_size}
+              collectionId={collection._id}
               onClick={() => handleCollectionSelect(collection, index)}
             />
           </div>
