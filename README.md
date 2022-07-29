@@ -14,7 +14,7 @@
 
 An online art district where artists can come together and share their unique creations from all around the globe.
 
-Start sharing your art [now](https://github.com/jasonmar08/Artwork_Collection_Directory)!
+Start sharing your art [now](https://nameless-sierra-42667.herokuapp.com/)!
 
 ---
 
