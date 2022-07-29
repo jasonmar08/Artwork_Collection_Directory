@@ -26,11 +26,14 @@ This online art directory is a space where artistic creators from around the wor
 
 ## **_Screenshots_**
 
-{% slide %}
+Collections Page:
 ![Home/Collections Page](/client/images/Homepage.png)
+
+Artworks Page:
 ![Artworks Page](/client/images/Artworks.png)
+
+Submitting Your Art:
 ![Submit Art Page](/client/images/Submit.png)
-{% endslider %}
 
 ---
 
@@ -59,6 +62,9 @@ This online art directory is a space where artistic creators from around the wor
 ## **_Credits_**
 
 **Art Gallery Images/Info: [art.com](https://tinyurl.com/ya46mtet)**
+
 **Technologies: [synergytop.com](https://tinyurl.com/5n7b5mzm)**
+
 **Planning: [draw.io](https://tinyurl.com/2y959xfw)**
+
 **CSS Editting: [w3schools.com](https://tinyurl.com/5422vee2) | [stackoverflow.com](https://tinyurl.com/4ddesxs6) | [codingartistweb.com](https://tinyurl.com/2hvcmbfj) | [fdossena.com](https://tinyurl.com/bdedk6ru)**
