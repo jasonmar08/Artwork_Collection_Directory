@@ -24,20 +24,8 @@ This online art directory is a space where artistic creators from around the wor
 
 ## **_Screenshots_**
 
-Collections Page:
-![Home/Collections Page](/client/images/Homepage.png)
-
-Artworks Page:
-![Artworks Page](/client/images/Artworks.png)
-
-Submitting Your Art:
-![Submit Art Page](/client/images/Submit.png)
-
 <pre>
-  <img src="/client/images/Homepage.png"  alt="Collections Page">
-  <b>Collections Page</b><img src="/client/images/Artworks.png" alt="Artworks Page">
-  <b>Artworks Page</b><img src="/client/images/Submit.png" alt="Submit Your Art">
-  <b>Submit Your Artwork</b>
+  <img src="/client/images/Homepage.png"  alt="Collections Page">&nbsp;&nbsp;&nbsp;<img src="/client/images/Artworks.png" alt="Artworks Page">&nbsp;&nbsp;&nbsp;<img src="/client/images/Submit.png" alt="Submit Your Art">
 </pre>
 
 ---
