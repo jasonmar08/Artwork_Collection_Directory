@@ -35,9 +35,9 @@ Submitting Your Art:
 
 <pre>
   <img src="/client/images/Homepage.png"  alt="Collections Page">
-  <figcaption>Collections Page</figcaption><img src="/client/images/Artworks.png" alt="Artworks Page">
-  <figcaption>Artworks Page</figcaption><img src="/client/images/Submit.png" alt="Submit Your Art">
-  <figcaption>Submit Your Artwork</figcaption>
+  <b>Collections Page</b><img src="/client/images/Artworks.png" alt="Artworks Page">
+  <b>Artworks Page</b><img src="/client/images/Submit.png" alt="Submit Your Art">
+  <b>Submit Your Artwork</b>
 </pre>
 
 ---
