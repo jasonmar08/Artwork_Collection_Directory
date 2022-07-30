@@ -34,7 +34,7 @@ Submitting Your Art:
 ![Submit Art Page](/client/images/Submit.png)
 
 <pre>
-  <figure><img src="/client/images/Homepage.png"  alt="Collections Page"><figcaption>Collections Page</figcaption></figure><figure><img src="/client/images/Artworks.png" alt="Artworks Page"><figcaption>Artworks Page</figcaption></figure><figure><img src="/client/images/Submit.png" alt="Submit Your Art"><figcaption>Submit Your Artwork</figcaption></figure>
+  <img src="/client/images/Homepage.png"  alt="Collections Page"><figcaption>Collections Page</figcaption><img src="/client/images/Artworks.png" alt="Artworks Page"><figcaption>Artworks Page</figcaption><img src="/client/images/Submit.png" alt="Submit Your Art"><figcaption>Submit Your Artwork</figcaption>
 </pre>
 
 ---
