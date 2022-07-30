@@ -1,5 +1,3 @@
-# Your_Artwork_Gallery
-
 ![Your Artwork Gallery](/client/images/Banner.png)
 
 ## Date: 7/29/2022
