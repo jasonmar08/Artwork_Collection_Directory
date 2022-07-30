@@ -35,10 +35,10 @@ Submitting Your Art:
 
 <div>
   <pre>
-    <div><img src="/client/images/Homepage.png"  alt="Collections Page">
-    <figcaption align="center"><b>Collections Page</b></figcaption></div>&nbsp;&nbsp;&nbsp;<div><img src="/client/images/Artworks.png" alt="Artworks Page">
-    <figcaption align="center"><b>Artworks Page</b></figcaption></div>&nbsp;&nbsp;&nbsp;<div><img src="/client/images/Submit.png" alt="Submit Your Art">
-    <figcaption align="center"><b>Submit Your Art</b></figcaption></div>
+    <img src="/client/images/Homepage.png"  alt="Collections Page">
+    <figcaption allign="center"><b>Collections Page</b></figcaption>&nbsp;&nbsp;&nbsp;<img src="/client/images/Artworks.png" alt="Artworks Page">
+    <figcaption allign="center"><b>Artworks Page</b></figcaption>&nbsp;&nbsp;&nbsp;<img src="/client/images/Submit.png" alt="Submit Your Art">
+    <figcaption allign="center"><b>Submit Your Art</b></figcaption>
   </pre>
 </div>
 
