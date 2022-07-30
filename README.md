@@ -33,18 +33,31 @@ Artworks Page:
 Submitting Your Art:
 ![Submit Art Page](/client/images/Submit.png)
 
+<pre>
+  <img src="/client/images/Homepage.png"  height="400">&nbsp;&nbsp;&nbsp;<img src="/client/images/Artworks.png" height="400">&nbsp;&nbsp;&nbsp;<img src="/client/images/Submit.png" height="400">
+</pre>
+
 ---
 
 ## **_Technologies Used_**
 
 ![Technologies Used](https://tinyurl.com/2tns3kp8)
 
+- JavaScript
+- MongoDB/Mongoose
+- Express
+- React.js
+- Node.js
+- HTML/CSS
+
 ---
 
 ## **_Future Updates_**
 
+- [x] ~~Ability to add a new art collection~~
+- [ ] Option to add a single artwork to an existing collection
 - [ ] Allow users to create personal accounts for cloud storage
-- [ ] Add comments and review options
+- [ ] Add comments and likes(thumbs up) buttons
 - [ ] Implement payment options to sell artwork
 
 ---
