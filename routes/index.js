@@ -12,6 +12,8 @@ router.post('/collections', controllers.postNewCollection)
 
 router.delete('/collection/:id', controllers.findCollectionByIdAndDelete)
 
+router.delete('/artworks/:id', controllers.findArtworkByIdAndDelete)
+
 router.get('/artworks/:id', controllers.getAllArtworksByCollection)
 
 router.get('/artwork/:id', controllers.getOneArtwork)
@@ -20,6 +22,6 @@ router.put('/artwork/:id', controllers.findArtworkByIdAndUpdate)
 
 router.get('/artworks', controllers.getAllArtworks)
 
-router.post('/artworks', controllers.postNewArtworkByCollection)
+router.post('/collection/:id/artwork', controllers.postNewArtworkByCollection)
 
 module.exports = router

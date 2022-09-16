@@ -10,7 +10,7 @@ const ArtworkList = ({
 }) => {
   const [artworks, setArtworks] = useState([])
   let navigate = useNavigate()
-  let { collectionId, index } = useParams()
+  let { collectionId, artwork, index } = useParams()
 
   useEffect(() => {
     const getArtworks = async () => {
@@ -30,6 +30,17 @@ const ArtworkList = ({
     await updateState()
     navigate('/')
   }
+
+  // const handleClickDeleteArtwork = async () => {
+  //   await axios.delete(`/collection/${collectionId}`)
+  //   const updateState = () => {
+  //     let tempArray = artworks
+  //     tempArray.splice(index, 1)
+  //     setArtworks(tempArray)
+  //   }
+  //   await updateState()
+  //   navigate(`/collection/${collectionId}`)
+  // }
 
   return (
     <div>

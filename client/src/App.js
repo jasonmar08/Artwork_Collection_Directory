@@ -54,6 +54,7 @@ const App = () => {
               <ArtworkList
                 collectionSelect={collectionSelect}
                 collections={collections}
+                artwork={artwork}
                 setCollections={setCollections}
                 handleArtworkUpdateSelect={handleArtworkUpdateSelect}
               />

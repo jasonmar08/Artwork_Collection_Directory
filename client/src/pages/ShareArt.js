@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const ShareArt = () => {
@@ -9,6 +9,16 @@ const ShareArt = () => {
     collection_image: ''
   }
   const [formState, setFormState] = useState(initialState)
+  const [collections, setCollections] = useState([])
+
+  useEffect(() => {
+    const getCollectionsListDropdown = async () => {
+      const res = await axios.get('/collections')
+      setCollections(res.data.collections)
+    }
+    console.log('COLLECTIONS', collections)
+    getCollectionsListDropdown()
+  }, [])
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value })
@@ -59,12 +69,17 @@ const ShareArt = () => {
           <form className="artworkInputs">
             <label>Select Collection:</label>
             <select className="chooseCollection">
-              <option value="Eyes on Walls">Eyes on Walls</option>
+              {collections?.map((collection) => (
+                <option key={collection._id}>
+                  {collection.collection_name}
+                </option>
+              ))}
+              {/* <option value="Eyes on Walls">Eyes on Walls</option>
               <option value="Bridgeman Art">Bridgeman Art</option>
               <option value="Vogue Art">Vogue Art</option>
               <option value="Library of Congress">Library of Congress</option>
               <option value="Iconic Personalities">Iconic Personalities</option>
-              <option value="Lonely Planet">Lonely Planet</option>
+              <option value="Lonely Planet">Lonely Planet</option> */}
             </select>
             <label>Artist Name:</label>
             <input type="text" required placeholder="Artist Name"></input>

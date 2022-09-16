@@ -55,9 +55,11 @@ const getOneArtwork = async (req, res) => {
 
 const postNewArtworkByCollection = async (req, res) => {
   try {
-    const artwork = await new Artwork(req.body)
-    await artwork.save()
-    return res.status(200).json({ artwork })
+    let collection = await Collection.findById(req.params.id)
+    let artworkBody = { ...req.body, collection_name: collection._id }
+    let newArtwork = await Artwork.create(artworkBody)
+    return res.status(200).send(newArtwork)
+    // return res.status(200).json({ artworkBody })
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -68,6 +70,17 @@ const findCollectionByIdAndDelete = async (req, res) => {
     let deleted = await Collection.findByIdAndDelete(req.params.id)
     if (deleted) {
       return res.status(200).send('Collection Deleted!')
+    }
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const findArtworkByIdAndDelete = async (req, res) => {
+  try {
+    let deleted = await Artwork.findByIdAndDelete(req.params.id)
+    if (deleted) {
+      return res.status(200).send('Artwork Deleted!')
     }
   } catch (error) {
     return res.status(500).send(error.message)
@@ -106,5 +119,6 @@ module.exports = {
   getAllArtworksByCollection,
   postNewArtworkByCollection,
   findCollectionByIdAndDelete,
+  findArtworkByIdAndDelete,
   postNewCollection
 }

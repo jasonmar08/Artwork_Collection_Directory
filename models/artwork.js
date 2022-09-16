@@ -6,7 +6,7 @@ const ArtworkSchema = new Schema(
     image: { type: String, required: true },
     artist_name: { type: String, required: true },
     price: { type: String, required: true },
-    collection_name: { type: Schema.Types.ObjectId, ref: 'Collection' }
+    collection_name: [{ type: Schema.Types.ObjectId, ref: 'Collection' }]
   },
   { timestamps: true }
 )
