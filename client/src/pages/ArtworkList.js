@@ -10,7 +10,7 @@ const ArtworkList = ({
 }) => {
   const [artworks, setArtworks] = useState([])
   let navigate = useNavigate()
-  let { collectionId, artwork, index } = useParams()
+  let { collectionId, index } = useParams()
 
   useEffect(() => {
     const getArtworks = async () => {
@@ -31,18 +31,20 @@ const ArtworkList = ({
     navigate('/')
   }
 
-  // const handleClickDeleteArtwork = async () => {
-  //   await axios.delete(`/collection/${collectionId}`)
-  //   const updateState = () => {
-  //     let tempArray = artworks
-  //     tempArray.splice(index, 1)
-  //     setArtworks(tempArray)
-  //   }
-  //   await updateState()
-  //   navigate(`/collection/${collectionId}`)
-  // }
+  const refreshPage = () => {
+    window.location.reload()
+  }
 
-  return (
+  const handleClickDeleteArtwork = async (artwork) => {
+    await axios.delete(`/artworks/${artwork._id}`)
+    refreshPage()
+  }
+
+  const navigateShare = () => {
+    navigate('/share')
+  }
+
+  return artworks.length ? (
     <div>
       <h1>
         The "<em>{`${collectionSelect.collection_name}`}</em>" Collection
@@ -78,10 +80,30 @@ const ArtworkList = ({
               >
                 Edit Info
               </button>
-              <button className="artworkListButtons">Remove Artwork</button>
+              <button
+                onClick={() => handleClickDeleteArtwork(artwork)}
+                className="artworkListButtons"
+              >
+                Remove Artwork
+              </button>
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  ) : (
+    <div>
+      <h1>
+        The "<em>{`${collectionSelect.collection_name}`}</em>" Collection
+      </h1>
+      <div className="removeCollection">
+        <button onClick={handleClickDeleteCollection} className="removeButton">
+          Delete Collection
+        </button>
+      </div>
+      <div className="no-artworks">
+        <h3>There are no artworks yet. Be the first to add your art!</h3>
+        <button onClick={() => navigateShare()}>Add Art</button>
       </div>
     </div>
   )

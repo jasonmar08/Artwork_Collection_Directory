@@ -129,6 +129,43 @@ img {
   text-align: center;
 }
 
+.no-artworks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25vh;
+  color: rgb(184, 165, 108);
+}
+
+.no-artworks button {
+  display:inline-block;
+  background-color:#d3c1a2;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin-top: 10px;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight: 300;
+  color:#1b1818;
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.no-artworks button:hover {
+  color:rgb(246, 225, 188);
+  background-color: #ab8959;
+  cursor: pointer;
+  }
+  @media all and (max-width:30em){
+  .no-artworks button{
+  display:block;
+  margin:0.4em auto;
+  }
+  }
+
 button {
   cursor: pointer;
 }
