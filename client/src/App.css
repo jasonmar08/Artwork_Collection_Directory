@@ -333,3 +333,61 @@ input {
   grid-gap: 8px;
   margin-top: 30px;
 }
+
+@media all and (max-width: 600px) {
+  header {
+    justify-content: center;
+  }
+  
+  .logoHeader {
+    font-size: 20px;
+    padding: 0;
+  }
+
+  a {
+    display: inline;
+  }
+
+  .home-collections {
+    display: grid;
+    padding: 2em 0;
+    grid-template-columns: repeat(auto-fill, 350px);
+    grid-gap: 4em;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .collection-grid {
+    width: 300px;
+    padding: 12px;
+    margin: 0.5em;
+    align-items: center;
+    justify-content: center;
+    /* border: 0.2em double rgb(246, 225, 188); */
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    width: 300px;
+  }
+
+  .submissionForms {
+    display: flex;
+    flex-direction: column;
+    padding: 3em 0;
+    grid-template-columns: 330px 330px;
+    grid-gap: 6em;
+    justify-content: center;
+    background: none;
+    align-items: center;
+  }
+
+  .collectionInputs, .artworkInputs {
+    display: grid;
+    grid-gap: 8px;
+    margin-top: 30px;
+  }
+}
