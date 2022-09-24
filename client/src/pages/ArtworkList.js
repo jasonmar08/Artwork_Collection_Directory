@@ -46,7 +46,7 @@ const ArtworkList = ({
 
   return artworks.length ? (
     <div>
-      <h1>
+      <h1 id="collection-name">
         The "<em>{`${collectionSelect.collection_name}`}</em>" Collection
       </h1>
       <div className="removeCollection">
@@ -93,7 +93,7 @@ const ArtworkList = ({
     </div>
   ) : (
     <div>
-      <h1>
+      <h1 id="collection-name">
         The "<em>{`${collectionSelect.collection_name}`}</em>" Collection
       </h1>
       <div className="removeCollection">
